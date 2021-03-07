@@ -1,4 +1,4 @@
-package fpgrowth;
+package FP-growth;
 
 public interface Sort {
   public static void swap(int[] x, int i, int j) {
