@@ -130,11 +130,6 @@ public class FPGrowth implements Iterable<ItemSet> {
     return !end;
   }
   
-  /**
-   * Generates a local FP tree
-   * @param node the conditional patterns given this node to construct the local FP-tree.
-   * @return the local FP-tree.
-   */
   private FPTree getLocalFPTree(FPTree.Node node, int[] localItemSupport, int[] prefixItemset) {
     FPTree tree = new FPTree(minSupport, localItemSupport);
     
@@ -158,13 +153,7 @@ public class FPGrowth implements Iterable<ItemSet> {
     return tree;
   }
   
-  /**
-   * Insert a item to the front of an item set.
-   * @param itemset the original item set.
-   * @param item the new item to be inserted.
-   * @return the combined item set
-   */
-  static int[] insert(int[] itemset, int item) {
+  public static int[] insert(int[] itemset, int item) {
     if (itemset == null) {
       return new int[]{item};
       
