@@ -1,6 +1,4 @@
 import java.util.*;
-import java.util.stream.Stream;
-import java.util.function.Supplier;
 
 public class FPTree {
   
@@ -59,6 +57,7 @@ public class FPTree {
     }
   }
   
+  
   public static class HeaderTableItem implements Comparable<HeaderTableItem> {
     int id;
     int count = 0;
@@ -68,6 +67,7 @@ public class FPTree {
       this.id = id;
     }
     
+    @Override
     public int compareTo(HeaderTableItem o) {
       return Integer.compare(o.count, count);
     }
@@ -105,7 +105,7 @@ public class FPTree {
     numItems = itemSupport.length;
     for (int f : itemSupport) 
       if (f >= minSupport) 
-      numFreqItems++;
+        numFreqItems++;
     
     headerTable = new HeaderTableItem[numFreqItems];
     for (int i = 0, j = 0; i < numItems; i++) {
